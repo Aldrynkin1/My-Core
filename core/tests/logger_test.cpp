@@ -12,7 +12,7 @@ void test_log() {
 }
 
 void test_file_create() {
-    std::string workpath = std::string(PROJECT_ROOT_DIR);
+    std::string workpath = std::string(__FILE__).substr(0, std::string(__FILE__).find_last_of("/\\"));
     Core::FileLogger filelogger(workpath + "/logs/logs.log");
     filelogger.WriteLogToFile(Core::LogLevel::Level::INFO, "Logger add log to file");
     filelogger.WriteLogToFile(Core::LogLevel::Level::WARNING, "C++ is hard language");
