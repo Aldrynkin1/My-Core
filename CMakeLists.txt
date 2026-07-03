@@ -25,6 +25,7 @@ add_library(My_Core STATIC
     core/src/MyException.cpp
     core/c_include/src/allocator.c
     core/src/AI.cpp
+    core/src/MultiLayer.cpp
 )
 
 target_include_directories(My_Core PUBLIC

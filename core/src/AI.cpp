@@ -13,7 +13,6 @@ namespace Core
         logger.log("Ai create", Core::LogLevel::Level::INFO);
         filelogger.WriteLogToFile(Core::LogLevel::Level::INFO, "Ai create");
     }
-
     AI::~AI()
     {
     }
