@@ -26,6 +26,7 @@ add_library(My_Core STATIC
     core/c_include/src/allocator.c
     core/src/AI.cpp
     core/src/MultiLayer.cpp
+    core/src/ConsoleWriterColors.cpp
 )
 
 target_include_directories(My_Core PUBLIC
@@ -39,6 +40,7 @@ add_executable(CoreTests
     core/tests/logger_test.cpp
     core/tests/Timer_test.cpp
     core/tests/Ai_test.cpp
+    core/tests/ConsoleColors_test.cpp
 )
 
 target_link_libraries(CoreTests PRIVATE My_Core)
