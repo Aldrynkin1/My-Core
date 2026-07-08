@@ -69,8 +69,8 @@ namespace Core
         std::vector<double> hide_delta(3);
         for (int i = 0; i < 3; i++)
         {
-            double hide_erroe = delta_out * weights_hidden_to_output[i];
-            hide_delta[i] = hide_erroe * derivative_sigma(hidden_layer[i]);
+            double hide_error = delta_out * weights_hidden_to_output[i];
+            hide_delta[i] = hide_error * derivative_sigma(hidden_layer[i]);
             weights_hidden_to_output[i] += learning_rate * delta_out * hidden_layer[i];
         }
         bias_output += learning_rate * delta_out * 1.0;

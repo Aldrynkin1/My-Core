@@ -27,6 +27,10 @@ add_library(My_Core STATIC
     core/src/AI.cpp
     core/src/MultiLayer.cpp
     core/src/ConsoleWriterColors.cpp
+    game/src/Monster.cpp
+    game/src/Gun.cpp
+    game/src/Creature.cpp
+    game/src/Human.cpp
 )
 
 target_include_directories(My_Core PUBLIC
