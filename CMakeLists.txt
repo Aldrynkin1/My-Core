@@ -36,7 +36,18 @@ add_library(My_Core STATIC
 target_include_directories(My_Core PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/core/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/core/c_include/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/game/include"
 )
+
+add_executable(GameApp
+    main.cpp
+)
+
+target_include_directories(GameApp PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/game/include"
+)
+
+target_link_libraries(GameApp PRIVATE My_Core)
 
 add_executable(CoreTests
     core/tests/allocator_test.cpp
@@ -50,8 +61,8 @@ add_executable(CoreTests
 target_link_libraries(CoreTests PRIVATE My_Core)
 
 add_custom_target(run
-    COMMAND $<TARGET_FILE:CoreTests>
+    COMMAND $<TARGET_FILE:GameApp>
     WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-    DEPENDS CoreTests
-    COMMENT "Running core tests..."
+    DEPENDS GameApp
+    COMMENT "Running the game application..."
 )

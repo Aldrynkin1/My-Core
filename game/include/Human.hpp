@@ -15,7 +15,6 @@ namespace Game
         Human();
         ~Human();
         std::string getGun() const;
-    std::string getArmor() const;
-    std::string getHelmet() const;
-};
+        std::string getHelmet() const;
+    };
 }

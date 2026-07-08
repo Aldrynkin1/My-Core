@@ -24,7 +24,6 @@ namespace Game
         int level;
         int experience;
         double gold;
-        void setPosition(double x, double y);
         void setLevel(int lvl);
         void setExperience(int exp);
         void setGold(double g);
@@ -37,7 +36,8 @@ namespace Game
 
     public:
         Creature();
-        ~Creature();
+        virtual ~Creature();
+        void setPosition(double x, double y);
         int getId() const;
         std::string getName() const;
         std::string getType() const;
